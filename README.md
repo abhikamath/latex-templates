@@ -1,1 +1,1 @@
-$\text{\LaTeX}$ templates
+$\mathrm{\LaTeX}$ templates
