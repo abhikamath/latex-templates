@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%
+%%% Commands %%%
+%%%%%%%%%%%%%%%%
+
+%%% Section heading font %%%
+
+\allsectionsfont{\normalfont\sffamily\bfseries} % `sectsty`
+
+%%% Custom colors %%%
+
+\definecolor{darts}{HTML}{009670}
+\definecolor{bricks}{HTML}{E74C3C}
+\definecolor{steelblue}{HTML}{4682b4}
+\definecolor{goldenrod}{HTML}{daa520}
+\definecolor{fista}{HTML}{075187}
+\definecolor{fistagray}{HTML}{929598}
+\colorlet{steve}{blue!80!gray!80!green} % HTML: 1447B8
+
+\newcommand{\darts}[1]{\text{\textcolor{darts}{#1}}}
+\newcommand{\bricks}[1]{\text{\textcolor{bricks}{#1}}}
+\newcommand{\steelblue}[1]{\text{\textcolor{steelblue}{#1}}}
+\newcommand{\goldenrod}[1]{\text{\textcolor{goldenrod}{#1}}}
+\newcommand{\fista}[1]{\text{\textcolor{fista}{#1}}}
+\newcommand{\fistagray}[1]{\text{\textcolor{fistagray}{#1}}}
+\newcommand{\steve}[1]{\text{\textcolor{steve}{#1}}}
+
+%%% Math commands %%%
+
+% Use this while dividing by a norm (to align the numerator and denominator)—requires the `physics` package
+\newcommand{\normdiv}[2][p]{%
+    \ensuremath{{}_{\phantom{#1}}\norm{{#2}}_{#1}}%
+}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand{\range}[2]{#1\!:\!#2} % range
+\newcommand{\alev}{a.e.\@}
+\newcommand{\wrt}{w.r.t.\@}
+
+\DeclareMathOperator*{\argmax}{\operatorname{argmax}}
+\DeclareMathOperator*{\diag}{\operatorname{diag}}
+\DeclareMathOperator*{\blkdiag}{\operatorname{blkdiag}}
+\DeclareMathOperator*{\chol}{\operatorname{chol}}
+\DeclareMathOperator*{\maxspec}{\max\operatorname{spec}}
+
+%%% Settings %%%
+
+% Default settings
+
+\newcommand{\thetitlecolor}{black}
+\newcommand{\themaintitle}{Default Main Title}
+\newcommand{\thesubtitle}{Default Subtitle}
+\newcommand{\thedocumenttype}{Default Document Type}
+\newcommand{\theauthorname}{Default Author}
+\newcommand{\thementornames}{Default Mentor 1, Default Mentor 2}
+\newcommand{\theteam}{Default Team}
+\newcommand{\thecompany}{Default Company}
+\newcommand{\thedatetext}{Default Date}
+\newcommand{\theshorttitle}{Default Short Title}
+\newcommand{\thewatermarkwidth}{}
+\newcommand{\thewatermarkimage}{}
+
+% Custom settings
+
+\newcommand{\titlecolor}[1]{\renewcommand{\thetitlecolor}{#1}}
+\newcommand{\maintitle}[1]{\renewcommand{\themaintitle}{#1}}
+\newcommand{\subtitle}[1]{\renewcommand{\thesubtitle}{#1}}
+\newcommand{\documenttype}[1]{\renewcommand{\thedocumenttype}{#1}}
+\newcommand{\authorname}[1]{\renewcommand{\theauthorname}{#1}}
+\newcommand{\mentornames}[1]{\renewcommand{\thementornames}{#1}}
+\newcommand{\team}[1]{\renewcommand{\theteam}{#1}}
+\newcommand{\company}[1]{\renewcommand{\thecompany}{#1}}
+\newcommand{\datetext}[1]{\renewcommand{\thedatetext}{#1}}
+\newcommand{\shorttitle}[1]{\renewcommand{\theshorttitle}{#1}}
+\newcommand{\watermarkwidth}[1]{\renewcommand{\thewatermarkwidth}{#1}}
+\newcommand{\watermarkimage}[1]{\renewcommand{\thewatermarkimage}{#1}}

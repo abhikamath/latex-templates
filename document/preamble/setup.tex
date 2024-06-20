@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%
+%%% Setup %%%
+%%%%%%%%%%%%%
+
+%%% Hyperlink setup %%%
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkgray,
+    citecolor=teal,
+    filecolor=PineGreen,      
+    urlcolor=BurntOrange,
+    pdfpagemode=FullScreen,
+}
+
+%%% To reduce spacing before `\paragraph` %%%
+
+% https://tex.stackexchange.com/a/4895
+
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}%
+  {\z@}{0.375\baselineskip \@plus 1ex \@minus .2ex}{-0.75em}%
+  {\normalfont\normalsize\bfseries}%
+}
+\makeatother
+
+%%% Boxes %%%
+
+\tcbuselibrary{skins}
+
+% Full box: the box extends across the page horizontally, regardless of the width of the content
+\newtcolorbox{fullbox}
+{
+  enhanced jigsaw,
+  colframe=black,
+  colback=white,
+  drop shadow=black!50!white,
+  boxrule=0.75pt
+}
+
+% Crop box: the box extends to fit the content (horizontally)
+\newtcolorbox{cropbox}
+{
+  enhanced jigsaw,
+  colframe=black,
+  colback=white,
+  drop shadow=black!50!white,
+  boxrule=0.75pt,
+  hbox
+}
+
+%%% Title %%%
+
+\title{\Large\textcolor{\thetitlecolor}{\textsf{\textbf{\themaintitle}}} \\[1em]
+\begin{normalsize}
+    \textcolor{\thetitlecolor}{\thesubtitle}
+\end{normalsize}\\[1.5em] \begin{tcolorbox}[height=0.95cm, hbox, colframe=white, colback=fistagray!10, halign=center, valign=top, boxrule=0.75pt, arc=1.5mm, auto outer arc]\begin{large}\textcolor{\thetitlecolor}{\textit{\thedocumenttype}}\end{large}\end{tcolorbox}\vspace{-0.75em}}
+
+\author{\theauthorname \\[1.25em] \textcolor{fistagray}{\hspace{-10ex}\textit{Mentors}}:~~\thementornames \\[1.25em] \theteam \\[0.125em] \thecompany}
+\date{\thedatetext\\[3.5em]
+\normalsize
+\begin{center}
+\begin{cropbox}
+\textcolor{\thetitlecolor}{\textbf{\theshorttitle}}
+\end{cropbox}
+\end{center}}
+
+%%% Spacing %%%
+
+\setlength{\parskip}{0.5\baselineskip}%
+\setlength{\parindent}{0pt}%
+\setlist{itemsep=0.375ex}%
+\renewcommand{\baselinestretch}{1.075}%
+
+%%% Bibliography %%%
+
+% https://tex.stackexchange.com/a/553388
+
+\immediate\write18{cp `kpsewhich natdin.bst` .}
+
+%%% Header and footer %%%
+
+\setlength{\headheight}{13.6pt}
+\renewcommand{\headrulewidth}{0.25pt}
+\renewcommand{\footrulewidth}{0.25pt}
+\pagestyle{fancy}
+\fancyhfinit{\normalfont\sffamily}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[R]{\nouppercase{\leftmark}}
+\cfoot{\rmfamily\textcolor{darkgray}{\thepage\ of \pageref{LastPage}}}
+\fancyfoot[L]{\textcolor{darkgray}{\thecompany{}}}
+\fancyfoot[R]{\textcolor{darkgray}{\theshorttitle}}
+
+%%% Theorem-like environments %%%
+
+\newtheorem{remark}{Remark}
+\newtheorem{note}{Note}
+\newtheorem{sketch}{Proof [sketch]}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{example}{Example}
