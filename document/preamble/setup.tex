@@ -57,7 +57,9 @@
     \textcolor{\thetitlecolor}{\thesubtitle}
 \end{normalsize}\\[1.5em] \begin{tcolorbox}[height=0.95cm, hbox, colframe=white, colback=fistagray!10, halign=center, valign=top, boxrule=0.75pt, arc=1.5mm, auto outer arc]\begin{large}\textcolor{\thetitlecolor}{\textit{\thedocumenttype}}\end{large}\end{tcolorbox}\vspace{-0.75em}}
 
-\author{\theauthorname \\[1.25em] \textcolor{fistagray}{\hspace{-10ex}\textit{Mentors}}:~~\thementornames \\[1.25em] \theteam \\[0.125em] \thecompany}
+\newcommand{\secondarycolor}[1]{\text{\textcolor{fistagray}{#1}}}
+
+\author{\theauthorname \\[0.125em] \secondarycolor{\theauthorrole} \\[1.25em] \secondarycolor{\hspace{-10ex}\textit{Mentors}}:~~\thementornames \\[1.25em] \secondarycolor{\theteam} \\[0.125em] \secondarycolor{\thecompany}}
 \date{\thedatetext\\[3.5em]
 \normalsize
 \begin{center}
